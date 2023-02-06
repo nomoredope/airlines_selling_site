@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+     <script>
+   function onSubmit(token) {
+     document.getElementById("reg_form").submit();
+   }
+ </script>
+</head>
+<body>
+<h1 align="center"> Регистрация</h1> <br><br>
+<h1 align="center"> Придумайте ваш логин и пароль</h1> <br><br>
+  <div align="center">
+      <form id="reg_form" method="POST" action="">
+          <label for="login"> Логин</label>
+          <input type="text" id="login" name="login"><br><br>
+
+          <label for="password"> Пароль </label>
+          <input type="password" name="password" id="password"><br><br>
+
+          <label for="password_rep"> Повторите пароль </label>
+          <input type="password" name="password_rep" id="password_rep"><br><br>
+          <div>
+          <button class="g-recaptcha"
+        data-sitekey="{{ rc_key }}"
+        data-callback='onSubmit'
+        data-action='submit'>Отправить</button>
+          <br><br>
+              проверка ReCaptcha by Google
+          </div>
+      <br><br>
+      <h2 align="center">{{ message }}</h2>
+  </div>
+</body>
+</html>

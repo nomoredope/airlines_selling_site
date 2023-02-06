@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <style>
+        .colour{
+        color: #ffffff;
+        }
+        #background{
+        background: url("https://i.pinimg.com/originals/93/ed/1f/93ed1f6d939f9f349fe06a249ef87c50.jpg");
+
+        background-size: auto;
+        }
+.appBackground {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-image: url("https://i.pinimg.com/originals/93/ed/1f/93ed1f6d939f9f349fe06a249ef87c50.jpg");
+}
+    </style>
+    <meta charset="UTF-8">
+    <title>Заказ</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div align = center>
+    <br><br>
+    <a href = "{{url_for('menu_choice')}}">Вернуться в меню</a> <br><br>
+</div>
+{% import 'list_utils.html' as utils %}
+<div align = center>
+    <form method="post" action="">
+    <h1>Поиск авиабилитов:</h1><br>Из <input type="text" name="port_out"> в <input type="text" name="port_in">
+        <br><br> вылет <input type="date" name="data">
+    <input type="submit" name="search" value="Поиск">
+        <input type="submit" name="clear_search" value="Сброс">
+            </form>
+            <div class = "col-md-4" style="float:right;">
+            <h2 style="color:blue">Ваша корзина</h2>
+                {% if basket %}
+                <form method="post" action="">
+            <input type="submit" name="clear" value="Очистить корзину">
+                    </form>
+
+                {% for key in basket %}
+                    {% if key != 'summa' %}
+                        {{utils.render_item(basket[key], show_form = False, show_amount = True) }}
+                    {% endif %}
+                {%endfor%}
+                <h4 style="color:green"> Сумма заказа: {{basket['summa']}} </h4>
+                <form method="post" action="">
+            <input type="submit" name="save_order" value="Оформить заказ">
+                    </form>
+            {% else %}
+                <p>Ваша корзина пуста</p>
+            {% endif %}
+                {% if order_complete %}
+                <br><br>
+                <h1 style="color:green;"> Заказ оформлен!</h1>
+                {% endif %}
+            </div>
+
+</div>
+    </form>
+</div>
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-8">
+
+            <h2>Все доступные товары</h2>
+                {%if items%}
+                {%for item in items%}
+                    {{utils.render_item(item, show_form = True, show_amount = False) }}
+                {%endfor%}
+                {% else %}
+                    <p>Нет доступных товаров</p>
+                {% endif %}
+        </div>
+
+</body>
+</html>

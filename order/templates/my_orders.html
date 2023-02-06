@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои заказы</title>
+</head>
+<body>
+<center><br><br><br>
+    <a href="/"> Вернуться в главное меню</a><br><br>
+    <h1 style="color:blue">Ваши заказы</h1>
+<div>
+    <table style="border:2px solid black">
+        <tr>
+            <th>№ Рейса</th>
+            <th>Кол-во билетов</th>
+            <th>Цена</th>
+            <th>Время заказа</th>
+        </tr>
+    {% for i in range(order_col) %}
+        <tr>
+        <td>{{ orders[i]['id_flight'] }}</td><td> {{ orders[i]['tickets'] }} </td> <td>{{ orders[i]['sum_price'] }}</td>
+        <td>{{ orders[i]['order_date'] }}</td> <br><br><br>
+        </tr>
+    {% endfor %}
+    </table>
+</div></center>
+</body>
+</html>

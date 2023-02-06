@@ -1,0 +1,1 @@
+SELECT login FROM airline.external_user WHERE `user_id` = 1;

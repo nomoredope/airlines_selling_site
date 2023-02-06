@@ -1,0 +1,1 @@
+SELECT * FROM airline.ordered WHERE id_user = $search

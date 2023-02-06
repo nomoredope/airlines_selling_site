@@ -1,0 +1,9 @@
+{
+  "admin": [
+    "blueprint_order",
+    "blueprint_adminboard"
+  ],
+  "external": [
+    "blueprint_order"
+  ]
+}

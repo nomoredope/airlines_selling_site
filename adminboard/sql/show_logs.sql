@@ -1,0 +1,1 @@
+SELECT DISTINCT id_finale FROM airline.logs

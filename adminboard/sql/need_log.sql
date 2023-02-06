@@ -1,0 +1,1 @@
+SELECT * FROM airline.logs WHERE id_finale = '$need_log'

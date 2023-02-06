@@ -1,0 +1,1 @@
+SELECT * FROM airline.airlines WHERE DATE(time_out) = '$data'

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать отчет</title>
+</head>
+<body>
+<center><a style="color:blue" href="{{url_for('blueprint_adminboard.start_admin')}}">Вернуться назад</a><br><br>
+</center>
+<center>
+<form method="POST" id="new_log">
+  <div style="border:2px solid black; text-align:center; display:inline-block; padding:20px">
+    <h1 style="color:blue">Создание отчёта</h1><br>
+    <h2 style="color:red"> {{message}}</h2>
+  <label for="id_log">Название отчета:</label>
+          <input type="text" id="id_log" name="id_log"><br><br><br>
+  <label for="start_date">Начало фиксирования продаж:</label>
+          <input type="date" id="start_date" name="start_date"><br><br><br>
+  <label for="end_date">Конец фиксирования продаж:</label>
+          <input type="date" id="end_date" name="end_date"><br><br><br>
+    <input type="submit" name="add_log" value="Создать отчет>">
+  </div>
+</form></center>
+</body>
+</html>

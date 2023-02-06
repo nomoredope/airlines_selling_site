@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <style>
+        .colour{
+        color: #000000;
+        }
+        #background{
+        background: url("https://loyminastyle.ru/upload/iblock/caa/caa9b0b8a684eb8b5f565c7a1a33664e.jpg");
+
+        background-size: auto;
+        }
+.appBackground {
+position: fixed;
+top: 0;
+left: 0;
+width: 110%;
+height: 100%;
+background-size: cover;
+background-image: url("https://loyminastyle.ru/upload/iblock/caa/caa9b0b8a684eb8b5f565c7a1a33664e.jpg");
+}
+    </style>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+</head>
+<body>
+<center>
+  <font face="Consolas", color="red", size="16pt">Вы успешно авторизовались как '{{user_group}}' </font>
+  <br><br>
+  <a href={{url_for('menu_choice')}}>Нажмите, что бы продолжить работу</a>
+</center>
+
+</body>
+</html>

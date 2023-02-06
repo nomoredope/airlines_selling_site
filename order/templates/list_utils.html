@@ -1,0 +1,28 @@
+{% macro render_item(item, show_form=False, show_amount=False)%}
+<div style="border-style: solid; border-color: black; margin: 5px">
+  <p>
+    <span style="color: black">Рейс: </span>
+    <span style="color: blue">{{item['id_fl']}}</span>
+    <span style="color: red">{{item['port_out']}} - {{item['port_to']}}</span><br>
+    <span style="color: black">Вылет:   </span>
+    <span style="color: blue">{{item['time_out']}}</span><br>
+    <span style="color: black">Прибытие: </span>
+    <span style="color: blue">{{item['time_in']}}</span><br>
+    <span style="color: black">Цена билета: </span>
+    <span style="color: green">{{item['price']}}</span><br>
+    {% if show_amount %}
+    <span style="color: black">Количество:</span>
+    <span style="color: black">{{item['tickets']}}</span>
+    {% endif %}
+  </p>
+  {% if show_form %}
+  <div>
+    <form action="" method="post">
+      <input type="hidden" name="basket_item" value="{{item['id_fl']}}">
+      <input type="submit" name="to_basket" value="Добавить">
+    </form>
+  </div>
+  {% endif %}
+
+</div>
+{% endmacro %}

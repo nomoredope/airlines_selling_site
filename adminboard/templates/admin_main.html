@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ-панель</title>
+</head>
+<body>
+<br>
+<center><a style="color:blur" href="{{url_for('exit_func')}}">Выйти из системы</a></center>
+<center><br>
+<div style="border:2px solid black; text-align:center; display:inline-block; padding:20px">
+    <h2>Панель администратора</h2>
+    {{date}}
+    <h1><a href="{{url_for('blueprint_adminboard.logs')}}">Просмотр отчетов</a></h1>
+    <br>
+    <h1><a href="{{url_for('blueprint_adminboard.new_log')}}">Создать отчет</a></h1>
+    <br>
+    <h1><a href="{{url_for('blueprint_adminboard.new_flight')}}">Добавить рейс</a></h1>
+</div></center>
+</body>
+</html>

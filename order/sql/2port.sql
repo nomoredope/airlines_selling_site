@@ -1,0 +1,1 @@
+SELECT * FROM airline.airlines WHERE port_out = '$port_out' and port_to = '$port_in'

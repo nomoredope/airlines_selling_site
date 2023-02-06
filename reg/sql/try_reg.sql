@@ -1,0 +1,1 @@
+INSERT INTO airline.external_user (login, password) VALUES ('$login', '$password')

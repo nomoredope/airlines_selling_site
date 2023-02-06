@@ -1,0 +1,1 @@
+SELECT * FROM airline.airlines WHERE DATE(time_out) = '$data' and port_out = '$port_out' and port_to = '$port_in'

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить рейс</title>
+</head>
+<body>
+<br><br>
+<center>
+    <a href="{{url_for('blueprint_adminboard.start_admin')}}" style="color:blue">Вернуться в меню</a><br><br>
+</center>
+<center><form id="newflight" method="POST" action=""><div style="border:2px solid black;
+ text-align:center; display:inline-block; padding:30px">
+    <h1 style="color:blue">Добавление рейса</h1><br>
+    <h2 style="color:red"> {{message}}</h2>
+  <label for="id_fl">Номер рейса:</label>
+          <input type="text" id="id_fl" name="id_fl"><br><br><br>
+  <label for="port_out">Город и время вылета: </label>
+          <input type="text" id="port_out" name="port_out"><br><br>
+    <input type="datetime-local" name="time_out"><br><br><br>
+  <label for="port_to">Город и время прибытия: </label>
+          <input type="text" id="port_to" name="port_to"><br><br>
+    <input type="datetime-local" name="time_in"><br><br><br>
+    <label for="tickets">Кол-во билетов:</label>
+    <input type="text" id="tickets" name="tickets"><br><br><br>
+    <label for="price">Цена билета:</label>
+    <input type="text" id="price" name="price"><br><br><br>
+    <input type="submit" name="add_flight" value="Добавить рейс">
+</div>
+
+</form></center>
+</body>
+</html>

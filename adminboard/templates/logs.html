@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчеты</title>
+</head>
+<body>
+<center><br><br>
+    <a href="{{url_for('blueprint_adminboard.start_admin')}}"> Вернуться назад</a>
+    <br><br>
+    <form method="POST">
+        {% if not need %}
+  {% for key in range(col) %}
+        <input type="hidden" name="need_log{{key}}" value="{{items[key]['id_finale']}}">
+  <input type="submit" name="get_value{{key}}" value="{{items[key]['id_finale']}}"><br><br>
+
+
+  {% endfor %}
+        </form>
+        {% else %}
+        <table style="border:2px solid black">
+        <tr>
+            <th>№ Рейса</th>
+            <th>Покупки</th>
+            <th>Общ. цена</th>
+            <th>Время заказа</th>
+        </tr>
+            {% for key in range(col) %}
+            <tr>
+        <td>{{ need[key]['id_flight'] }}</td><td>    {{ need[key]['summa'] }}</td> <td>
+
+                {{ need[key]['summa_price'] }}</td> <td> {{need[key]['log_date']}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+</center>
+</body>
+</html>
